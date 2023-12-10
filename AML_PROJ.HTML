@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>H1-B Test</title>
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">H1-B Predictions</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST">
+        
+				<fieldset>
+				<legend>H1-B Predictions Form</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-md-6">
+							<label for="Employer_Name">Employer Name</label>
+							<select class="form-control" id="Employer_Name" name = "Employer_Name" required>
+                                <option disabled selected value> -- Select an Employer -- </option>
+                                <option value = "COGNIZANT TECHNOLOGY SOLUTIONS US CORP">COGNIZANT TECHNOLOGY SOLUTIONS US CORP</option>
+                                <option value = "INFOSYS LIMITED ">INFOSYS LIMITED </option>
+                                <option value = "TATA CONSULTANCY SERVICES LIMITED">TATA CONSULTANCY SERVICES LIMITED</option>
+                                <option value = "DELOITTE CONSULTING LLP">DELOITTE CONSULTING LLP</option>
+                                <option value = "CAPGEMINI AMERICA INC ">CAPGEMINI AMERICA INC </option>
+                                <option value = "Google LLC">Google LLC</option>
+                                <option value = "Microsoft Corporation">Microsoft Corporation</option>
+                                <option value = "Ernst & Young U.S. LLP">Ernst & Young U.S. LLP</option>
+                                <option value = "WIPRO LIMITED ">WIPRO LIMITED </option>
+                                <option value = "AMAZON.COM SERVICES LLC">AMAZON.COM SERVICES LLC</option>
+                                <option value = "BIRLASOFT INC">BIRLASOFT INC</option>
+                                <option value = "CUMMINS INC">CUMMINS INC</option>
+                                <option value = "NTT DATA">NTT DATA</option>
+                                <option value = "DIZER CORP">DIZER CORP</option>
+                                <option value = "CORBINS SERVICES LLC">CORBINS SERVICES LLC</option>
+                              </select>
+						</div>
+                        </div>
+                        <div class="form-group  row">
+                            <div class="col-md-6">
+                                <label for="SOC_Title">SOC Title</label>
+                                <select class="form-control" id="SOC_Title"  name="SOC_Title" required>
+                                <option disabled selected value> -- Select your SOC Title -- </option>
+                                <option value = "Software Developers, Applications">Software Developers, Applications</option>
+                                <option value = "Computer Systems Analysts">Computer Systems Analysts</option>
+                                <option value = "Computer Occupations, All Other">Computer Occupations, All Other</option>
+                                <option value = "Software Developers, Systems Software">Software Developers, Systems Software</option>
+                                <option value = "Computer Programmers">Computer Programmers</option>
+                                <option value = "Operations Research Analysts">Operations Research Analysts</option>
+                                <option value = "Computer Systems Engineers/Architects">Computer Systems Engineers/Architects</option>
+                                <option value = "Mechanical Engineers">Mechanical Engineers</option>
+                                <option value = "Management Analysts ">Management Analysts </option>
+                                <option value = "Computer And Information Systems Managers">Computer And Information Systems Managers</option>
+                                <option value = "Database Administrators">Database Administrators</option>
+                                <option value = "Budget Analysts">Budget Analysts</option>
+                                <option value = "Architectural Drafters">Financial Analysts</option>
+                            
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group  row">
+                            <div class="col-md-6">
+                              <label for="Job_Title">Job Title</label>
+                              <select class="form-control" id="Job_Title" name = "Job_Title" required>
+                                <option disabled selected value> -- Select the designation -- </option>
+                                <option value = "SOFTWARE ENGINEER">SOFTWARE ENGINEER </option>
+                                <option value = "SOFTWARE DEVELOPER">SOFTWARE DEVELOPER</option>
+                                <option value = "PROGRAMMER ANALYST">PROGRAMMER ANALYST </option>
+                                <option value = "SENIOR SOFTWARE ENGINEER">SENIOR SOFTWARE ENGINEER</option>
+                                <option value = "SENIOR SYSTEMS ANALYST JC60">SENIOR SYSTEMS ANALYST JC60</option>
+                                <option value = "ASSISTANT PROFESSOR">ASSISTANT PROFESSOR </option>
+                                <option value = "SYSTEMS ANALYST">SYSTEMS ANALYST </option>
+                                <option value = "CONSULTANT">CONSULTANT </option>
+                                <option value = "BUSINESS ANALYST">BUSINESS ANALYST</option>
+                                <option value = "DEVELOPER">DEVELOPER</option>
+                                <option value = "ANALYST">ANALYST</option>
+                                <option value = "SENIOR SOFTWARE DEVELOPER">SENIOR SOFTWARE DEVELOPER</option>
+                                <option value = "PROJECT MANAGER ">PROJECT MANAGER </option>
+                                <option value = "DATA ANALYST">DATA ANALYST</option>
+                                <option value = "DATA SCIENTIST">DATA SCIENTIST</option>
+                                <option value = "DATA ENGINEER">DATA ENGINEER</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group  row">   
+                            <div class="col-md-6">
+                              <label for="Work_state">Work State</label>
+                              <select class="form-control" id="Work_state" name = "Work_state" required>
+                                <option disabled selected value> -- Select the work state -- </option>
+                                <option value = "ALABAMA">ALABAMA </option>
+                                <option value = "ALASKA">ALASKA</option>
+                                <option value = "CALIFORNIA">CALIFORNIA </option>
+                                <option value = "TEXAS">TEXAS</option>
+                                <option value = "NEW YORK">NEW YORK</option>
+                                <option value = "NEW JERSEY">NEW JERSEY</option>
+                                <option value = "ILLINOIS">ILLINOIS </option>
+                                <option value = "WASHINGTON ">WASHINGTON </option>
+                                <option value = "MASSACHUSETTS">MASSACHUSETTS</option>
+                                <option value = "GEORGIA">GEORGIA</option>
+                                <option value = "PENNSYLVANIA">PENNSYLVANIA</option>
+                                <option value = "MICHIGAN">MICHIGAN</option>
+                                <option value = "UTAH">UTAH </option>
+                                <option value = "NORTH CAROLINA">NORTH CAROLINA</option>
+                                <option value = "DELAWARE">DELAWARE</option>
+                                <option value = "ARIZONA">ARIZONA</option>
+                              </select>
+                            </div>
+                        </div> 
+                        <div class="form-group  row">   
+                            <div class="col-md-6">
+                              <label for="WAGE_CATEGORY">Wage Category</label>
+                              <select class="form-control" id="WAGE_CATEGORY" name = "WAGE_CATEGORY" required>
+                                <option disabled selected value> -- Select the wage -- </option>
+                                <option value = "VERY LOW">VERY LOW (Wage < $50000)</option>
+                                <option value = "LOW">LOW (Wage > $50000 & $100000)</option>
+                                <option value = "MEDIUM">MEDIUM (Wage > $100000 & Wage <= $200000) </option>
+                                <option value = "HIGH">HIGH (Wage > $200000 & Wage <= $500000) </option>
+                                <option value = "VERY HIGH">VERY HIGH (Wage > $5000000)</option>
+                              </select>
+                            </div>
+                        </div>
+					  </div>
+					  <br>
+					  
+					  
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Predict">
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+		</div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
